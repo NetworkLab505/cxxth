@@ -1,0 +1,150 @@
+
+
+#logo{
+    height:49px;
+    background-color: #add8e6;
+}
+
+#regist{
+    margin-top: 23px;
+    margin-left:17%;
+    margin-bottom:20px;
+    border:2px solid #31b0d5;
+    width:827px;
+    height:620px;
+
+}
+#top-one{
+    border-bottom-style:dotted;
+    border-bottom-color:#31b0d5;
+    height:72px;
+}
+
+.image{
+    width:62px;
+    height:61px;
+}
+#m1,#m2,#m3{
+    float:right;
+    width:206px;
+    margin-top: -49px;
+}
+#m0{
+    margin-top:30px;
+    width:243px;
+}
+#top-three{
+    height:600px;
+}
+label{
+    background-color: transparent;
+    margin-top: 20px;
+    width:80px;
+    height:41px;
+    border: 1px solid green;
+ }
+#userrole{
+    width:230px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 11px;
+}
+#repassword,#department{
+    width:230px;
+    height:41px;
+   text-align: center;
+    margin-top:31px;
+
+
+
+}
+#username{
+    width:230px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+
+
+}
+#password{
+    width:230px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 14px;
+
+}
+#validate{
+    width:229px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 14px;
+
+}
+#college,#mail{
+    width:230px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+    margin-left: 8px;
+
+}
+#telephone,#major{
+    width:230px;
+    height:41px;
+    text-align: center;
+    margin-top:31px;
+
+}
+#vbtn{
+    height:40px;
+    width:229px;
+    text-align: center;
+    background-color: greenyellow;
+    margin-top:31px;
+    margin-left: 33px;
+
+}
+#btn{
+    width:451px;
+    height:41px;
+
+    text-align: center;
+    margin-top:31px;
+    margin-left: 167px;
+    background-color:#2aabd2
+}
+:-ms-input-placeholder
+{
+    color: black;
+}
+::-webkit-input-placeholder{
+    color:black;
+}
+:-moz-placeholder{
+    color:black;
+}
+::-moz-placeholder{
+    color:black;
+}
+#footer{
+    text-align: center;
+    width:100%;
+    height:50px;
+    float:left;
+    background-color:#add8e6;
+}
+#yw {
+    color:gray;
+    margin-top: 22px;
+    margin-left:2%;
+    height:30%;
+}
+#forget{
+    padding-left:257px;
+}
+#autodenglu{
+    padding-left:30px;
+}

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增删改查</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--声明文档的兼容模式，表示使用IE浏览器的最新模式-->
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script src="js/course.js"></script>
+</head>
+<body class="easyui-layout" style="margin-top:1px;">
+    <div class="easyui-tabs" fit="true" border="false">
+        <table id="Datagrid" >
+
+    </table>
+    </div>
+<!--增加修改时弹出框的内容-->
+<div id="Dialog" class="easyui-dialog"  style="width:620px;top:150px;"  resizable="true" collapsible="true" minimizable="true" maximizable="true"closed="true"modal="true">
+        <form  id="courseForm" method="post"  >
+            <table class="tableStyle" style="width: 100%;height:96%;  font-size: 14px" height="100px">
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">学习方向：</td>
+                    <td>
+                        <select id="direction"  name="direction" class="easyui-combobox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                            <option>网络</option>
+                            <option>嵌入式</option>
+                            <option>电源</option>
+                            <option>工控</option>
+                            <option>移动</option>
+                        </select>
+                    </td>
+                    <td width="15%" class="tableStyle">子类：</td>
+                    <td>
+                        <select id="subclass"  name="subclass"   class="easyui-combobox" style="width: 150px"   required="true" missingMessage="该项为必填!">
+                            <option>前端</option>
+                            <option>后端</option>
+                            <option>运维</option>
+                            <option>电源</option>
+                            <option>工控</option>
+                            <option>移动</option>
+                            <option>嵌入式</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">层次：</td>
+                    <td>
+                        <select id="grade"  name="grade" class="easyui-combobox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                            <option>初级</option>
+                            <option>中级</option>
+                            <option>高级</option>
+                        </select>
+                    </td>
+
+                    <td width="15%" class="tableStyle" height="40px">课程名称：</td>
+                    <td>
+                        <input id="courseName"  name="courseName" class="easyui-textbox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                    </td>
+                </tr>
+
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">课程编号：</td>
+                    <td>
+                        <input id="courseCode" name="courseCode" class="easyui-textbox" style="width: 150px" required="true" missingMessage="该项课程名和主讲人的首字母组成!">
+                    </td>
+
+                    <td width="15%" class="tableStyle" height="35px">课程主讲：</td>
+                    <td>
+                        <input id="speaker" name="speaker" class="easyui-textbox" style="width: 150px" required="true" missingMessage="输入主讲人姓名!">
+                    </td>
+                </tr>
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">课程简介：</td>
+                    <td>
+                        <input id="courseSummary" name="courseSummary" class="easyui-textbox" style="width: 150px" >
+                    </td>
+                    <td width="15%" class="tableStyle" height="35px">课程来源：</td>
+                    <td>
+                        <input id="ownershipOfCourse" name="ownershipOfCourse" class="easyui-textbox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                    </td>
+
+                </tr>
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">课程图片：</td>
+                    <td>
+                        <input id="courseImg" name="courseImg"  class="easyui-filebox" onchange="" style="width: 150px"  >
+                    </td>
+                    <td width="15%" class="tableStyle" height="35px">图片名称：</td>
+                    <td>
+                        <input id="imgName" name="imgName" class="easyui-textbox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                    </td>
+
+                </tr>
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">图片简介：</td>
+                    <td>
+                        <input id="imgSummary" name="imgSummary" class="easyui-textbox" style="width: 150px" >
+                    </td>
+                    <td width="15%" class="tableStyle" height="35px">创建时间：</td>
+                    <td>
+                        <input id="createTime" name="createTime" class="easyui-datebox" style="width: 150px" required="true" missingMessage="该项为必填!">
+                    </td>
+
+                </tr>
+            </table><br>
+        </form>
+</div>
+<!--隐藏div-->
+<div id="div_show_p" style="display: none"></div>
+    <!--显示详情-->
+<div id="detailsDialog" class="easyui-dialog"  style="width:620px;top:150px;"  resizable="true"collapsible="true"minimizable="true"maximizable="true"closed="true"modal="true">
+    <form id="detailsForm" action="" method="post">
+        <table class="tableStyle" style="width: 100%;height:96%; font-size: 14px"height="100px">
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">学习方向：</td>
+                <td>
+                    <input   name="direction" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+                <td width="15%" class="tableStyle">子类：</td>
+                <td>
+                    <input   name="subclass"  readonly="true" class="easyui-textbox" style="width: 150px"   >
+                </td>
+            </tr>
+
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">层次：</td>
+                <td>
+                    <input   name="grade" readonly="true" class="easyui-textbox" style="width: 150px" >
+
+                </td>
+
+                <td width="15%" class="tableStyle" height="40px">课程名称：</td>
+                <td>
+                    <input   name="courseName" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+            </tr>
+
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">课程编号：</td>
+                <td>
+                    <input  name="courseCode" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+
+                <td width="15%" class="tableStyle" height="35px">课程主讲：</td>
+                <td>
+                    <input  name="speaker" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+            </tr>
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">课程简介：</td>
+                <td>
+                    <input  name="courseSummary" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+
+                <td width="15%" class="tableStyle" height="35px">课程来源：</td>
+                <td>
+                    <input  name="ownershipOfCourse" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+            </tr>
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">课程图片：</td>
+                <td>
+                    <input  name="courseImg"  readonly="true" class="easyui-textbox"  style="width: 150px"  >
+                </td>
+                <td width="15%" class="tableStyle" height="40px">图片名称：</td>
+                <td>
+                    <input   name="imgName" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+
+            </tr>
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">图片简介：</td>
+                <td>
+                    <input  name="imgSummary" readonly="true" class="easyui-textbox"  style="width: 150px"  >
+                </td>
+
+                <td width="15%" class="tableStyle" height="35px">创建时间：</td>
+                <td>
+                    <input  name="createTime" readonly="true" class="easyui-textbox" style="width: 150px" >
+                </td>
+            </tr>
+            <tr class="tableStyle"  height="40px" >
+                <td width="15%" class="tableStyle">选课人数：</td>
+                <td>
+                    <input  name="userNumbers" readonly="true" class="easyui-numberbox"  style="width: 150px"  >
+                </td>
+
+                <td width="15%" class="tableStyle" height="35px">点击次数：</td>
+                <td>
+                    <input  name="hitCount" readonly="true" class="easyui-numberbox" style="width: 150px" >
+                </td>
+            </tr>
+        </table><br>
+    </form>
+</div>
+</body>
+</html>

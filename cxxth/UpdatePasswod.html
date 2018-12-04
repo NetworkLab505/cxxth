@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--声明文档的兼容模式，表示使用IE浏览器的最新模式-->
+    <!--<meta name="viewport" content="width=device-width,initial-scale=1">-->
+    <!--设置窗口宽度（值为设置的理想宽度），页面初始缩放值<理想宽度/可见宽度>-->
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+    <link rel="stylesheet" type="text/css" href="css/MailFind.css">
+    <script type="text/javascript" src="js/MailFind.js"></script>
+    <title>重置密码</title>
+</head>
+<body>
+<div class="container">
+<div id="large">
+<!--logo设计-->
+ <div class="header">
+    <img src="images/Image%203.jpg" alt="QQ邮箱" >
+   &nbsp; <span id="spanone">通过QQ邮箱找回创新课堂密码 </span>
+ </div>
+    <form action="Success.html" method="post" >
+    <div id="middle">
+        <p  id="p_one" >2.填写创新课堂账号</p><br>
+        <p class="p_two" >请输入创新课堂的账号</p>
+        <input type="text"  id="username"  name="username" maxlength="12" >
+        <span  style="color: red" id="userspan"></span>
+        <br>
+
+            <p class="p_two" >请输入新的密码</p>
+            <input type="password"  id="password"  name="password" maxlength="12"    >
+            <span  style="color: red" id="psspan"></span>
+            <br>
+
+
+        <input type="submit" id="btn"  value="确 定" style="background-color:#2aabd2; width: 67px; height: 31px"  onclick="return RcheckUser()">
+    </div>
+    </form>
+    <!--页尾-->
+    <div id="footer"  class="container-fluid"  >
+        <div id="yw">
+            <span style="font-size: small;">Coyright @2018   创新课堂网络505  版权所有</span></div>
+    </div>
+</div>
+</div>
+</body>
+</html>

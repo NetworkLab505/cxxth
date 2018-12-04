@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+	<script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+	<link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+	<script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+	<link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script  type="text/javascript" src="./js/videoImg.js"></script>
+    </head>
+<body class="easyui-layout" style="margin-top:1px;">
+    <div class="easyui-tabs" fit="true" border="false">
+            <table id="datagrid"></table>
+    </div>
+ <div id="video-dialog" class="easyui-dialog" title="增加视频"  closed="true"style="height:400px; width:500px;">
+	<form id="videoInputForm"  method="post">
+	<table >
+		<tr >
+		  <th  width="39%"style="text-align:right;">视频名称：</th></br>
+		  <td ><input name="videoName"style="border-radius:4px;border:solid #1f90bb8f 1px;height:27px;width:230px;"/></td>
+		</tr><br/>
+		<tr style="margin-bottom:20px;">		  	
+           <th style="margin-bottom:20px;text-align:right;">视频路径：</th> 
+           <td>
+              <div style="margin-top:20px; ">
+               	<input id="img-url" style="width: 234px !important;"class="easyui-filebox" name="img-url" data-options="buttonText:'选择文件',onChange:lookImg , accept:'application/image/gif/jpeg' " multiple />
+              </div>
+               <div style="margin-top:10px"id="addImage"></div>
+          </td>           	
+	   </tr>
+	   <tr >
+		 <th width="39%"style="text-align:right;">视频简介：<br/></th>
+		  <td><textarea style="border-radius:8px;height:127px;border:solid #1f90bb8f 1px;width:230px;margin-top:10px;"name="videoSummary"/></textarea></td>		 
+		</tr>
+	 </table>
+	</form>
+</div>
+<!-- 详情 -->
+<div id="video-dialog1" class="easyui-dialog" title="增加视频"  closed="true"style="height:400px; width:500px;">
+	<form id="videoInputForm2" method="post">
+	<table >
+		<tr >
+		  <th  width="39%" style="text-align:right;">视频名称：</th></br>
+		  <td ><input id="videoName1" name="videoName1"readonly="true" style="border-radius:4px;border:solid #1f90bb8f 1px;height:27px;width:230px;"/></td>
+		</tr><br/>
+		<tr >
+			<th width="39%"  style="text-align:right;">视频简介：<br/></th>
+			<td><textarea id="videoSummary1" name="videoSummary1" readonly="true" style="border-radius:8px;height:127px;border:solid #1f90bb8f 1px;width:230px;margin-top:10px;"/></textarea></td>
+		</tr><br/>
+		<tr style="margin-bottom:20px;">		  	
+           <th style="margin-bottom:20px;text-align:right;">视频路径：</th> 
+           <td>
+              <div style="margin-top:20px; ">
+               	<input style="width: 234px !important;" id="img-url1" name="img-url" class="easyui-filebox" readonly="true"  data-options="buttonText:'选择文件',onChange:lookImg , accept:'application/image/gif/jpeg' "multiple />
+              </div>
+          </td>           	
+	   </tr>
+
+	 </table>
+	</form>
+</div>
+<div id="div_show_p" style="display: none"></div>       <!--   隐藏div-->
+</body>
+</html>

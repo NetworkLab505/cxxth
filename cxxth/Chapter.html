@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>章节管理</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--声明文档的兼容模式，表示使用IE浏览器的最新模式-->
+    <title>Layout的应用</title>
+    <script src="./jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="./jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="./jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="./jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="./jquery-easyui-1.5.5.4/themes/icon.css">
+    <script rel="stylesheet" src="js/chapter.js"></script>
+</head>
+<body class="easyui-layout" style="margin-top:1px;">
+    <div class="easyui-tabs" fit="true" border="false">
+        <table id="datagrid">
+
+        </table>
+        <div id="div_show_p" style="display:none"></div>
+    </div>
+<div class="easyui-dialog" id="standardWindow" title="新增章节" collapsible="true" minimizable="true"
+      maximizable="true" resizable="true" modal="true" closed="true" style="width: 400px; top:150px;left:400px;height:300px;
+      background-color: #d7ebf9">
+    <form id="standarForm" method="post">
+        <table class="table-edit" width="100%" align="center" style="padding-top:20px;">
+            <tr>
+                <th align="right">章顺序</th>
+                <td>
+                    <input name="chapterOrder"  type="text"  data-options="required:true" style="width:200px; margin-top:5px;"/>
+                </td><br/>
+            </tr>
+            <tr>
+                <th align="right">章名称</th>
+                <td>
+                    <input name="chapterName" type="text" class="easyui-volidatebox" required="true" style="width:200px; margin-top:5px;"/>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">章简介</th>
+                <td>
+                    <input name="chapterSummary" type="text" class="easyui-volidatebox" required="true" style="width:200px; margin-top:5px;"/>
+                </td>
+            </tr>
+            <tr>
+                <th align="right">课&nbsp;&nbsp;&nbsp;程</th>
+                <td>
+                    <input name="course" type="text" class="easyui-volidatebox" required="true" style="width:200px; margin-top:5px;"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div class="easyui-dialog" id="showwindow" title="详情" collapsible="true" minimizable="true"
+     maximizable="true" resizable="true" modal="true" closed="true" style="width: 400px; top:150px;left:400px;height:300px;
+      background-color: #d7ebf9">
+<form id="show" method="post">
+    <table class="table-edit" width="80%" align="center" style="padding-top:20px;">
+        <tr>
+            <th align="right">章顺序</th>
+            <td>
+                <input name="chapterOrder"  type="text"  data-options="required:true" readonly="true" style="width:200px; margin-top:5px;"/>
+            </td><br/>
+        </tr>
+        <tr>
+            <th align="right">章名称</th>
+            <td>
+                <input name="chapterName" type="text" class="easyui-volidatebox" readonly="true" required="true" style="width:200px; margin-top:5px;"/>
+            </td>
+        </tr>
+        <tr>
+            <th align="right">章简介</th>
+            <td>
+                <input name="chapterSummary" type="text" class="easyui-volidatebox" readonly="true" required="true" style="width:200px; margin-top:5px;"/>
+            </td>
+        </tr>
+        <tr>
+            <th align="right">课&nbsp;&nbsp;&nbsp;程</th>
+            <td>
+                <input name="course" type="text" class="easyui-volidatebox" readonly="true" required="true" style="width:200px; margin-top:5px;"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</div>
+</body>
+</html>

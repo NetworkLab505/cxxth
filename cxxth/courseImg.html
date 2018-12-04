@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+		<script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+		<link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+		<script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+		<link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+		<script type="text/javascript" src="js/courseimg.js" ></script>
+		<title> 课程图片管理</title>
+		<script type="text/javascript" charset="UTF-8"></script>
+	</head>
+	<body class="easyui-layout" >
+		 
+
+       <!-- <div data-options="region:'center',  title:'center title'"   style="background:#eee;overflow: hidden;">-->
+        	<div class="easyui-tabs" fit="true" border="false">
+	           <!-- <div title="课程图片管理" >-->
+	                <table id="datagrid"></table>
+                     
+	                <div id="div_show_p" style="display: none"></div>          //隐藏div
+	    	        <!--弹出框添加信息表单-->
+	    	            <div id="img-dialog" class="easyui-dialog" data-options="closed:true,title:'增加信息',iconCls:'icon-save'" maximizable="true" collapsible="true" minimizable="true" resizable="true" style="width:500px;">
+	                       <form id="img-form" class="easyui-form" method="post" >
+	                       	<div style="float: left;padding-top: 15px;margin-left: 10px;">
+	                       		<table  >
+                                    
+                                    <tr>
+                                        <td width="60" align="center" >图片名称:</th>
+                                        <td><input type="text" name="imgName" class="img-text"  required="true" /></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">图片简介:</td>
+                                        <td><textarea name="imgSummary" rows="2" class="easyui-text" style="width: 167px;"></textarea></td>
+                                    </tr>
+                                    <tr>
+                                        <td width="60" align="right">图片路径:</th>
+                                        <td><input id="imgUrl" class="easyui-filebox" name="imgUrl" data-options="buttonText:'选择文件',onChange:lookImg , accept:'application/image/gif/jpeg' " /multiple></td>
+                           
+                                    </tr>
+                                </table>
+	                       	</div>
+	                       	<div id="addImage" style="float: left; display: block;margin-top: 20px;"></div>
+                    
+                    
+               </form>
+
+						</div>
+			</div>
+        <!--</div>-->
+       
+	</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户管理页面</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--声明文档的兼容模式，表示使用IE浏览器的最新模式-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--设置窗口宽度（值为设置的理想宽度），页面初始缩放值<理想宽度/可见宽度>-->
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script type="text/javascript" src="./js/userextend.js "></script>
+    <script type="text/javascript" src="./js/user.js "></script>
+</head>
+<body class="easyui-layout">
+<div class="easyui-tabs" fit="true" border="false">
+        <table id="user"></table>
+        <div id="save_user"  style="width: 400px;height: 400px; display: none;"></div>
+</div>
+
+<!--增加用户-->
+<div class="easyui-dialog" id="frame"  modal="true"  style="width: 700px;height:450px; margin: auto;" title="添加用户" iconCls="icon-save" closed="true">
+    <form action="" method="post" id="form1" style="padding-top: 20px;">
+        <!--在easyui里面，field就相当于id，所以如果定义了field就可以不定义id-->
+        <table cellpadding="10px" align="center" id="tableId">
+            <tr>
+                <th align="right">用户名</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox"  name="username" data-options="required:true,validType:'maxLength[5]'"/></td>
+                <th align="right">电话</th>
+                <td><input type="text" class="easyui-textbox easyui-numberbox"  name="telephone" data-options="required:true,validType:'length[11,11]'"/></td>
+            </tr>
+            <tr>
+                <th align="right">密码</th>
+                <td><input type="text" class="easyui-textbox" id="password" name="password" data-options="required: true"/></td>
+                <th align="right">确认密码</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" id="repassword"  name="repassword" required="true" validType="equals['#password']"/></td>
+            </tr>
+
+            <!--后面的列在后台管理页面是隐藏的，当点击某个按钮的时候，才会显示出来-->
+            <tr>
+                <th align="right">所在大学</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" closed="true"  display="true" name="college" data-options="required:true "/></td>
+                <th align="right">邮箱</th>
+                <td><input type="text" class="easyui-validatebox easyui-textbox" name="mail" data-options="required:true, validType:['email','length[13,20]']"/></td>
+            </tr>
+
+            <tr>
+                <th align="right">所属专业</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" closed="true"  display="true" name="major" data-options=" "/></td>
+                <th align="right">所在学院</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" closed="true"  display="true" name="department" data-options=" "/></td>
+
+            </tr>
+
+        </table>
+    </form>
+</div>
+
+<!--详细信息显示-->
+<div class="easyui-dialog" id="frame1"  modal="true"  style="width: 900px;height:500px; margin: auto;" title="添加用户" iconCls="icon-save" closed="true">
+    <form action="" method="post" id="form2" style="padding-top: 20px;">
+
+        <table cellpadding="10px" align="center" id="tableId1">
+            <tr>
+                <th align="right">当前登陆IP</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox"  id="currentIp1" readonly="true" display="true" name="currentIP1" data-options=" "/></td>
+                <th align="right">状态</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" id="enabled1" name="enabled1" readonly="true"/></td>
+            </tr>
+            <tr>
+                <th align="right">上次登录时间</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox"  id="createData1" readonly="true" display="true" name="createData1" data-options=" "/></td>
+                <th align="right">用户名</th>
+                <td>
+                    <span type="text" class="easyui-textbox easyui-validatebox" id="username1" name="username1" readonly="true"></span>
+                    <!--<span  id="username1" name="username1" style="width: 200px; height: 50px; border: 1px solid red;"></span>-->
+                </td>
+
+            </tr>
+            <tr>
+                <th align="right">当前登陆时间</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" id="expireData1" readonly="true" display="true" name="expireData1" data-options=" "/></td>
+                <th align="right">密码</th>
+                <td><input type="password" class="easyui-textbox" id="password1" name="password1" readonly="true" ></td>
+
+            </tr>
+            <tr>
+                <th align="right">所在大学</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox" id="college1" readonly="true" display="true" name="college1" data-options=" "/></td>
+
+                <th align="right">电话</th>
+                <td><input type="text" class="easyui-textbox easyui-numberbox" id="telephone1" name="telephone1"  readonly="true" /></td>
+            </tr>
+            <tr>
+                <th align="right">所在学院</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox"  id="department1" readonly="true" display="true" name="department1" data-options=" "/></td>
+                <th align="right">邮箱</th>
+                <td><input type="text" class="easyui-validatebox easyui-textbox" id="mail1" name="mail1" readonly="true"/></td>
+            </tr>
+            <tr>
+                <th align="right">所属专业</th>
+                <td><input type="text" class="easyui-textbox easyui-validatebox"  id="major1" readonly="true" display="true" name="major1" data-options=" "/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>

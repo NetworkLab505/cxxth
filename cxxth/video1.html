@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--声明文档的兼容模式，表示使用IE浏览器的最新模式-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--设置窗口宽度（值为设置的理想宽度），页面初始缩放值<理想宽度/可见宽度>-->
+    <script src="jquery-easyui-1.5.5.4/jquery.min.js"></script>
+    <script src="jquery-easyui-1.5.5.4/jquery.easyui.min.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/default/easyui.css">
+    <script src="jquery-easyui-1.5.5.4/locale/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="jquery-easyui-1.5.5.4/themes/icon.css">
+    <script src="js/content.js"></script>
+</head>
+<body>
+
+        <div class="easyui-tabs" fit="true" border="false" >
+                <table id="videogrid">
+                    <div id="div_show_p" style="display: none"></div>
+                </table>
+            </div>
+
+<!--新增弹框-->
+<div id="videoDialog" class="easyui-dialog" closed="true" style="width:600px;top:80px;background-color: #fff;" data-options="collapsible:true,maximizable:true,minimizable:true,resizable:true">
+  <!--  <fieldset class="tableStyle">  --> 
+        <form id='videoForm' method="post">
+
+<div style="display: inline-block;float: left;">
+            <table class="tableStyle" style="width: 100%;height:96%; font-size: 14px" height="150px">
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">视频序号：</td>
+                    <td>
+                        <input id="videoOrder"  name="videoOrder"  style="width: 208px;height: 30px;border:1px solid #00bbee; border-radius: 5px;" required="true" missingMessage="该项为必填!">
+                    </td>
+                </tr>
+                    <tr>
+                    <td width="15%" class="tableStyle">视频名称：</td>
+                    <td>
+                        <input id="videoName"  name="videoName"  style="width: 208px;height: 30px;border:1px solid #00bbee; border-radius: 5px;"   required="true" missingMessage="该项为必填!">
+                    </td>
+                </tr>
+
+                <tr class="tableStyle"  height="40px" >
+                    <td width="15%" class="tableStyle">讲授者：</td>
+                    <td>
+                        <input id="videoInstructor"  name="videoInstructor"  style="width: 208px;height: 30px;border:1px solid #00bbee; border-radius: 5px;" required="true" missingMessage="该项为必填!">
+                    </td></tr>
+                <tr>
+                    <td width="15%" class="tableStyle">关键字：</td>
+                    <td>
+                        <input id="videoKeypoints" name="videoKeypoints"  style="width: 208px;height: 30px;border:1px solid #00bbee; border-radius: 5px;" required="true" missingMessage="该项为必填!">
+                    </td>
+                </tr>
+                <tr class="tableStyle" height="80px">
+                    <td width="15%" class="tableStyle" height="40px">视频图片：</td>
+                    <td>
+                        <input   id="videoImg"  name="videoImg" style="width: 208px;height: 30px;border:1px solid #00bbee; border-radius: 5px;" required="true" multiple>
+
+                    </td>
+
+                </tr>
+                <tr class="tableStyle"  height="40px">
+
+                    <td width="15%" class="tableStyle" height="35px">对应章节：</td>
+                    <td>
+                        <input id="chapter" name="chapter"  url="json/courseChapter.json" required="true" valueField="id" textField="chapter"
+                               style="width: 420px;height: 40px;border:1px solid #00bbee; border-radius: 5px;" >
+                    </td>
+                </tr>
+                <tr>
+                    <td width="17%" class="tableStyle">视频对应课程：</td>
+                    <td>
+                        <input id="course" name="course"
+                               url="json/course.json"
+                               valueField="id" textField="course" required="true"
+                               style="width: 420px;height: 40px;border:1px solid #00bbee; border-radius: 5px;" >
+                    </td>
+                </tr>
+
+                <tr class="tableStyle" height="80px">
+                    <td width="15%" class="tableStyle" height="40px">内容简介：</td>
+                    <td>
+                        <textarea id="videoSummary"  name="videoSummary"  style="width: 420px;height:70px;border:1px solid #00bbee; border-radius: 5px;" required="true" missingMessage="该项为必填!">
+
+                        </textarea></td>
+                </tr>
+
+
+            </table>
+</div>
+            <div id="addimg"  style="display:inline-block;float: right;margin-top:-70%;margin-right:5px;" ></div>
+            <br>
+
+        </form>
+
+</div>
+
+</body>
+</html>

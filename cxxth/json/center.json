@@ -1,0 +1,16 @@
+{"total":"12","rows":[
+  {"id":"1","direction":"网络","subclass":"前端","grade":"初级","courseName":"HTML","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","userNumbers":"2","hitCount":"5","details":""},
+  {"id":"2","direction":"网络","subclass":"后端","grade":"中级","courseName":"css","courseCode":"HD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"3","direction":"网络","subclass":"运维","grade":"高级","courseName":"jquery","courseCode":"JD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"4","direction":"嵌入式","subclass":"移动","grade":"中级","courseName":"javascript","courseCode":"AD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"5","direction":"移动","subclass":"工控","grade":"初级","courseName":"HTML","courseCode":"BD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"6","direction":"工控","subclass":"嵌入式","grade":"高级","courseName":"javascript","courseCode":"HD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"7","direction":"嵌入式","subclass":"前端","grade":"初级","courseName":"javascript","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"8","direction":"网络后端","subclass":"后端","grade":"高级","courseName":"HTML","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"9","direction":"嵌入式","subclass":"运维","grade":"初级","courseName":"javascript","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"10","direction":"移动","subclass":"工控","grade":"中级","courseName":"css","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"11","direction":"嵌入式","subclass":"移动","grade":"初级","courseName":"HTML","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"},
+  {"id":"12","direction":"移动","subclass":"前端","grade":"高级","courseName":"css","courseCode":"CD","speaker":"韩平","courseSummary":"javascript表单校验","ownershipOfCourse":"网络","courseImg":".jpg","createTime":"2018.11.1","details":"信息"}
+
+]
+}
